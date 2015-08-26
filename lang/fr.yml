@@ -1,0 +1,33 @@
+
+label_import: "Importer"
+label_issue_importer: "Import de demandes"
+label_upload_notice: "Selctionnez un fichier CSV à importer. Le fichier doit avoir une ligne d'entête. Taille maxi. 4MB."
+label_upload_format: "Configuration du format de fichier"
+label_upload_encoding: "Encodage :"
+label_upload_splitter: "Séparateur de champ :"
+label_upload_wrapper: "Délimiteur de champ :"
+
+label_load_rules: "Charger les règles enregistrées"
+label_toplines: "Montre les premières lignes du fichier %s"
+label_match_columns: "Mise en correspondance des colonnes"
+label_match_select: "Sélectionner le champ correspondant"
+label_import_rule: "Importer les règles"
+label_default_tracker: "Marqueur par défaut :"
+label_update_issue: "Mettre à jour la demande existante"
+label_journal_field: "Sélectionner le champ qui servira de journal :"
+label_unique_field: "Sélectioner le champ unique qui identifiera la demande :"
+label_update_other_project: "Permettre la mise à jour des demandes d'autres projets"
+label_ignore_non_exist: "Ignorer les demandes inexistantes"
+label_rule_name: "Nom de la règle en entrée"
+
+label_import_result: "Résultat de l'import"
+label_result_notice: "%d lignes traitées.  %d lignes importées avec succès."
+label_result_projects: "Projets concernés :"
+label_result_issues: "%d demandes"  
+label_result_failed: "Erreur %d lignes:"
+
+option_ignore: "Ignorer"
+
+button_upload: "Envoyer le fichier"
+button_submit: "Valider"
+button_save_rules_and_submit: "Enregistrer les règles et envoyer"

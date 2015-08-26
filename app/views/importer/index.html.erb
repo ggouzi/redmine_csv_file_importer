@@ -1,0 +1,26 @@
+<h2><%=l(:label_issue_importer)%></h2>
+
+<%= form_tag({:action => 'match'}, {:multipart => true}) do %>
+	<%=	hidden_field_tag 'project_id', @project.id %>
+	
+	<p><label><%=l(:label_upload_import_type)%></label>
+	<%= select_tag "import_type", "<option value=\"issue\">#{l(:label_issue)}</option><option value=\"time_entry\">#{l(:label_time_entry)}</option>".html_safe %></p>
+	
+	<p><label><%=l(:label_upload_notice)%></label><br/>
+	<%= file_field_tag 'file', :size => 60, :required => true %></p>
+
+	<fieldset class="box"><legend><%= l(:label_upload_format) %></legend>
+		<p><label><%=l(:label_upload_encoding)%></label>
+		<%= select_tag "encoding", "<option value=\"U\">UTF8</option><option value=\"L1\">Latin1</option><option value=\"L9\">Latin9</option><option value=\"EUC\">EUC</option><option value=\"S\">SJIS</option><option value=\"N\">None</option>".html_safe %></p>
+		
+		<p><label><%=l(:label_upload_splitter)%></label>
+		<%= text_field_tag "splitter", ',', {:size => 3, :maxlength => 1, :required => true} %></p>
+		
+		<p><label><%=l(:label_upload_wrapper)%></label>
+		<%= text_field_tag "wrapper", '"', {:size => 3, :maxlength => 1}%></p>
+		
+	</fieldset>	
+
+	<%= submit_tag l(:button_upload) %>
+<% end %>
+
