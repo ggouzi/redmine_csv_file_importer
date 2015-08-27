@@ -63,7 +63,7 @@ fr:
   error_issue_id_not_existing: "Identifiant de demande inexistant"
   error_issue_not_saved: "Demande non enregistrée"
   error_time_entry_not_saved: "Temps passé non enregistré"
-  error_duplicate_unique_field: "Le champ unique {{unique_field}} a des doublons"
+  error_duplicate_unique_field: "Le champ unique %{unique_field} a des doublons"
 
   text_rmi_specify_unique_field_for_update: "Unique field must be specified because Update existing issues is on"
   text_rmi_specify_unique_field_for_column: "Unique field must be specified because the column %{column} needs to refer to other tasks" 

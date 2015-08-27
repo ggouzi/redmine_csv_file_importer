@@ -10,16 +10,16 @@
 
 	<fieldset class="box"><legend><%= l(:label_match_select) %></legend>
 	<% @headers.each do |column| %>
-	     <% matched = ''
-	        @attrs.each do |k,v| if v.to_s.casecmp(column.to_s) == 0 or k.to_s.casecmp(column.to_s) == 0 then matched = v end end
-	        %>
-		 <label class="tabular"><%= column %>:
-				
-			<%= select_tag "fields_map[#{column}]",
-			 "<option value=\"\">#{l(:option_ignore)}</option>" + options_for_select( @attrs, matched )
-			%> 
-		</label>
-
+	    <% matched = ''
+	        @attrs.each do |k,v|
+	        	if v.to_s.casecmp(column.to_s.sub(" ") {|sp| "_" }) == 0 or k.to_s.casecmp(column.to_s) == 0 then
+	        		matched = v
+	        	end
+	        end
+	    %>
+		 <label class="tabular"><%= column.unpack('U*').pack('U*') %>:
+       <%= select_tag "fields_map[#{column.unpack('U*').pack('U*')}]", raw("<option value=\"\">#{l(:option_ignore)}</option>") +
+				options_for_select( @attrs, matched ) %></label>
 	<% end %>
 	</fieldset>
 	

@@ -1,7 +1,7 @@
 require 'csv'
 #require 'fastercsv'
 require 'tempfile'
-#require 'iconv'
+require 'iconv'
 
 class MultipleIssuesForUniqueValue < Exception
 end
@@ -63,6 +63,13 @@ class ImporterController < ApplicationController
     sample_count = 5
     i = 0
     @samples = []
+	
+	# Detects real encoding and converts as necessary
+	latin = latin_encoding(iip.encoding, iip.csv_data)
+	if latin[:latin]
+			iip.csv_data = latin[:data]
+			iip.encoding = latin[:encoding]
+	end
 
     begin
       CSV.new(iip.csv_data, {:headers=>true,
@@ -110,7 +117,7 @@ class ImporterController < ApplicationController
 
     # fields
     @attrs = Array.new
-    ISSUE_ATTRS.each do |attr|
+    attributes.each do |attr|
       #@attrs.push([l_has_string?("field_#{attr}".to_sym) ? l("field_#{attr}".to_sym) : attr.to_s.humanize, attr])
       @attrs.push([l_or_humanize(attr, :prefix=>"field_"), attr])
     end
@@ -236,12 +243,12 @@ class ImporterController < ApplicationController
     end
     
 	# Detects real encoding and converts as necessary
-	# latin = latin_encoding(iip.encoding, iip.csv_data)
-	# if latin[:latin]
-			# iip.csv_data = latin[:data]
-			# iip.encoding = latin[:encoding]
-	# end
-	logger.info "Encodage OK"
+	  latin = latin_encoding(iip.encoding, iip.csv_data)
+	  if latin[:latin]
+			  iip.csv_data = latin[:data]
+			  iip.encoding = latin[:encoding]
+	  end
+	 logger.info "Encodage OK"
 	result_errors = []
 
 	# Import
@@ -308,12 +315,16 @@ private
 	convert = false
 	
 	case pencoding
+		when 'U'
+			csv_data_lat=pdata.force_encoding("utf-8")
 		when 'L1'
 			csv_data_lat = Iconv.conv("UTF-8", "ISO8859-1", pdata)
+			#csv_data_lat=pdata.encode("iso-8859-1").force_encoding("utf-8")
 			convert = true
 
 		when 'L9'
 			csv_data_lat = Iconv.conv("UTF-8", "ISO8859-15", pdata)
+			#csv_data_lat=pdata.encode("iso-8859-15").force_encoding("utf-8")
 			convert = true
 	end
 	
@@ -595,9 +606,11 @@ private
 
 	    
 	ActiveRecord::Base.transaction do
-		FasterCSV.new(csv_data, {:headers=>header, :encoding=>encoding,
-		  :quote_char=>quote_char, :col_sep=>col_sep}).each do |row|
-
+		  CSV.new(csv_data, {:headers=>header, :encoding=>encoding, 
+        :quote_char=>quote_char, :col_sep=>col_sep}).each do |row|
+		
+		  journal = nil
+		  
 		  @handle_count += 1
 		  logger.info "Row processed :  #{row}"
 
@@ -652,8 +665,11 @@ private
 
 	      time.project_id = project != nil ? project.id : @project.id
 	      time.issue_id = issue_id
+		  #time.issue_id = Issue.find_by_name ...
+		  TimeEntryActivity.find_by_name(row[attrs_map["activity_id"]].strip)
 	      time.spent_on = row[attrs_map["spent_on"]]
-	      time.activity = TimeEntryActivity.find_by_name(row[attrs_map["activity_id"]].strip)
+	      #time.activity = activity_id
+		  time.activity = TimeEntryActivity.find_by_name(row[attrs_map["activity_id"]].strip)
 	      time.hours = row[attrs_map["hours"]]
 	      time.gct_tpscra = row[attrs_map["gct_tpscra"]]
 	      
