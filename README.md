@@ -57,7 +57,7 @@ Known encodings :
 * SJIS
 
 
-=## For issues import
+## For issues import
 
 User documentation for this part https://github.com/leovitch/redmine_importer/wiki.
 
@@ -95,7 +95,7 @@ Column 13 - Watchers
 Here, the character ',' is the Field separator
 Here, the character '"' " is the Field delimiter
 
-=## For time entries import
+## For time entries import
 
 Example :
 
