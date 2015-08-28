@@ -63,61 +63,61 @@ User documentation for this part https://github.com/leovitch/redmine_importer/wi
 
 Example :
 
-Column 1 - Subject
+- Column 1 - Subject
 
-Column 2 - Description
+- Column 2 - Description
 
-Column 3 - Assigned To
+- Column 3 - Assigned To
 
-Column 4 - Fixed version
+- Column 4 - Fixed version
 
-Column 5 - Author
+- Column 5 - Author
 
-Column 6 - Category
+- Column 6 - Category
 
-Column 7 - Priority
+- Column 7 - Priority
 
-Column 8 - Status
+- Column 8 - Status
 
-Column 9 - Start date
+- Column 9 - Start date
 
-Column 10 - Due date
+- Column 10 - Due date
 
-Column 11 - Done Ratio
+- Column 11 - Done Ratio
 
-Column 12 - Estimated hours
+- Column 12 - Estimated hours
 
-Column 13 - Watchers
+- Column 13 - Watchers
 
 "Subject","Description","Assigned To","Fixed version","Author","Category","Priority","Status","Start date","Due date","Done Ratio","Estimated hours","Watchers"
 "A subject","A description","admin","A target version","admin","Default","High","New",2011-05-01,2011-08-28,25,200,"test1,test2"
 
-Here, the character ',' is the Field separator
-Here, the character '"' " is the Field delimiter
+####Here, the character ',' is the Field separator
+####Here, the character '"' " is the Field delimiter
 
 ## For time entries import
 
 Example :
 
-Column 1 - Issue id
+- Column 1 - Issue id
 
-Column 2 - Time Entry comment (optional)
+- Column 2 - Time Entry comment (optional)
 
-Column 3 - Date spent on e.g. YYYY-MM-DD
+- Column 3 - Date spent on e.g. YYYY-MM-DD
 
-Column 4 - Activity name
+- Column 4 - Activity name
 
-Column 5 - Number of hours
+- Column 5 - Number of hours
 
-Column 6 - User login
+- Column 6 - User login
 
 You can add optional fields (make sure they'll be matched with the right field in the table).
 
 "Issue","Comments","Activity","spent_on","Hours","User","other_field"
 "10555",A comment","An activity name",2015-08-27,8,admin,"other_value"
 
-Here, the character ',' is the Field separator
-Here, the character '"' " is the Field delimiter
+####Here, the character ',' is the Field separator
+####Here, the character '"' " is the Field delimiter
 
 ## Tests
 
