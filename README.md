@@ -134,9 +134,11 @@ This plugin is licensed under the GNU GPL v2. See COPYRIGHT.txt and GPL.txt for 
 ## Credits
 
 This plugin was created by merging two plugins :
-* Redmine Issue Importer plugin (https://github.com/yoshidayo/redmine_importer) which allows you to import issues from csv files. Compatible with Rails 4.x.
+* Redmine Issue Importer plugin (https://github.com/yoshidayo/redmine_importer) which allows you to import issues from csv files.
+Compatible with Rails 4.x.
 It is an improvment of the plugin Redmine Issue Importer plugin (https://github.com/leovitch/redmine_importer)
-* Redmine Csv File Importer plugin (https://github.com/danypoup/redmine_csv_file_importer) with which you can import issues and time entries from csv files.
+* Redmine Csv File Importer plugin (https://github.com/danypoup/redmine_csv_file_importer)
+with which you can import issues and time entries from csv files for Rails 2.x
 It is a mix between the Redmine Issue Importer plugin (https://github.com/leovitch/redmine_importer) and the Bulk Time Entry Plugin (https://github.com/edavis10/redmine-bulk_time_entry_plugin), plus some minor improvements.
 
 Thanks to their creator : Yoshidayo, Dany Poupard, Leo Hourtvitz and Eric Davis.
