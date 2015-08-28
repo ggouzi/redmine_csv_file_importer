@@ -89,9 +89,9 @@ Example :
 
 - Column 13 - Watchers
 
-`"Subject","Description","Assigned To","Fixed version","Author","Category","Priority","Status","Start date","Due date","Done Ratio","Estimated hours","Watchers"
+`"Subject","Description","Assigned To","Fixed version","Author","Category","Priority","Status","Start date","Due date","Done Ratio","Estimated hours","Watchers"`
 
-"A subject","A description","admin","A target version","admin","Default","High","New",2011-05-01,2011-08-28,25,200,"test1,test2"`
+`"A subject","A description","admin","A target version","admin","Default","High","New",2011-05-01,2011-08-28,25,200,"test1,test2"`
 
 **Here, the character ',' is the Field separator**
 **Here, the character '"' " is the Field delimiter**
