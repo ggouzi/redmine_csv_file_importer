@@ -93,9 +93,9 @@ Example :
 
 "A subject","A description","admin","A target version","admin","Default","High","New",2011-05-01,2011-08-28,25,200,"test1,test2"
 
-**Here, the character ',' is the Field separator**
+**Here, the character , is the Field separator**
 
-**Here, the character '"' " is the Field delimiter**
+**Here, the character " is the Field delimiter**
 
 ## For time entries import
 
@@ -119,9 +119,9 @@ You can add optional fields (make sure they'll be matched with the right field i
 
 "10555",A comment","An activity name",2015-08-27,8,admin,"other_value"
 
-**Here, the character ',' is the Field separator**
+**Here, the character , is the Field separator**
 
-**Here, the character '"' " is the Field delimiter**
+**Here, the character " is the Field delimiter**
 
 ## Tests
 
