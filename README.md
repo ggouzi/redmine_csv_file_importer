@@ -5,14 +5,14 @@ This Redmine plugin allows importing issues and time_entries in bulk from csv fi
 Existing issues can be updated, and issue relationships and custom fields are supported.
 The database is used for intermediate storage.
 
-== Requirements
+## Requirements
 
 * Redmine 3.0.0 (Rails 4.x)
 * csv gem
 * tempfile gem (already added your Gemfile with Redmine 3.0.0)
 * iconv gem (deprecated since Ruby 1.9.3)
 	
-== Installation and Setup
+## Installation and Setup
 
 To install:
 * Install gems if not present in your Gemfile by adding these lines at the end of your Gemfile :
@@ -39,7 +39,7 @@ To setup :
 * Set permissions according to your needs
 * To import time entries, you need to define an issue customized field whose name must be "CSV-IMP-ID" and assign it to appropriates trackers. This customize field is used to bind issues with csv file.
 
-== CSV file format
+## CSV file format
 
 Lines :
 * One header row.
@@ -57,7 +57,7 @@ Known encodings :
 * SJIS
 
 
-=== For issues import
+=## For issues import
 
 User documentation for this part https://github.com/leovitch/redmine_importer/wiki.
 
@@ -95,7 +95,7 @@ Column 13 - Watchers
 Here, the character ',' is the Field separator
 Here, the character '"' " is the Field delimiter
 
-=== For time entries import
+=## For time entries import
 
 Example :
 
@@ -119,19 +119,19 @@ You can add optional fields (make sure they'll be matched with the right field i
 Here, the character ',' is the Field separator
 Here, the character '"' " is the Field delimiter
 
-== Tests
+## Tests
 
 Some files were added to help you to understand how this plugin works. They are in the folder "Tests plugin import csv"
 
-== Localizations
+## Localizations
 
 de, en, fr, ja, pt-BR, ru, zh localizations included.
 
-== Licence
+## Licence
 
 This plugin is licensed under the GNU GPL v2. See COPYRIGHT.txt and GPL.txt for details.
 
-== Credits
+## Credits
 
 This plugin was created by merging two plugins :
 * Redmine Issue Importer plugin (https://github.com/yoshidayo/redmine_importer) which allows you to import issues from csv files. Compatible with Rails 4.x.
