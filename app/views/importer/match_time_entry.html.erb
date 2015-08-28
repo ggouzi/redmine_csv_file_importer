@@ -19,7 +19,7 @@
 	    %>
 		 <label class="tabular"><%= column.unpack('U*').pack('U*') %>:
        <%= select_tag "fields_map[#{column.unpack('U*').pack('U*')}]", raw("<option value=\"\">#{l(:option_ignore)}</option>") +
-				options_for_select( @attrs, matched ) %></label>
+				options_for_select( @attrs, matched ), :required => true %></label>
 	<% end %>
 	</fieldset>
 	

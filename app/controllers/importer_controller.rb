@@ -196,29 +196,6 @@ class ImporterController < ApplicationController
     user ? user.id : nil
   end
 
-
-  # Returns the id for the given version or raises RecordNotFound.
-  # Implements a cache of version ids based on version name
-  # If add_versions is true and a valid name is given,
-  # will create a new version and save it when it doesn't exist yet.
-  def version_id_for_name!(project,name,add_versions)
-    if !@version_id_by_name.has_key?(name)
-      version = Version.find_by_project_id_and_name(project.id, name)
-      if !version
-        if name && (name.length > 0) && add_versions
-          version = project.versions.build(:name=>name)
-          version.save
-        else
-          @unfound_class = "Version"
-          @unfound_key = name
-          raise ActiveRecord::RecordNotFound, "No version named #{name}"
-        end
-      end
-      @version_id_by_name[name] = version.id
-    end
-    @version_id_by_name[name]
-  end
-
   def result
     @handle_count = 0
     @update_count = 0
@@ -291,18 +268,6 @@ private
   def flash_message(type, text)
     flash[type] ||= ""
     flash[type] += "#{text}<br/>"
-  end
-
-  def find_user(attr, name, default_user = nil)
-    if name
-      user = @users ? @users[name]: User.find_by_login(name)
-      if @check_non_exist_user && !user
-        flash[:warning] = "#{attr}: Unknown user '#{name}'"
-        user = ''
-      end
-    end
-    user = default_user unless user
-    user
   end
 
    def get_settings
