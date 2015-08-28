@@ -89,11 +89,12 @@ Example :
 
 - Column 13 - Watchers
 
-"Subject","Description","Assigned To","Fixed version","Author","Category","Priority","Status","Start date","Due date","Done Ratio","Estimated hours","Watchers"
-"A subject","A description","admin","A target version","admin","Default","High","New",2011-05-01,2011-08-28,25,200,"test1,test2"
+`"Subject","Description","Assigned To","Fixed version","Author","Category","Priority","Status","Start date","Due date","Done Ratio","Estimated hours","Watchers"
 
-####Here, the character ',' is the Field separator
-####Here, the character '"' " is the Field delimiter
+"A subject","A description","admin","A target version","admin","Default","High","New",2011-05-01,2011-08-28,25,200,"test1,test2"`
+
+**Here, the character ',' is the Field separator**
+**Here, the character '"' " is the Field delimiter**
 
 ## For time entries import
 
@@ -113,11 +114,12 @@ Example :
 
 You can add optional fields (make sure they'll be matched with the right field in the table).
 
-"Issue","Comments","Activity","spent_on","Hours","User","other_field"
-"10555",A comment","An activity name",2015-08-27,8,admin,"other_value"
+`"Issue","Comments","Activity","spent_on","Hours","User","other_field"
 
-####Here, the character ',' is the Field separator
-####Here, the character '"' " is the Field delimiter
+"10555",A comment","An activity name",2015-08-27,8,admin,"other_value"`
+
+**Here, the character ',' is the Field separator**
+**Here, the character '"' " is the Field delimiter**
 
 ## Tests
 
