@@ -8,7 +8,7 @@
   <label><%= l(:label_csv_import_issue_id) %></label>
      <% custom_fields = CustomField.where(:type => "IssueCustomField", :field_format => ["int", "float", "string", "list", "bool"])
         custom_fields = custom_fields.collect{|c| [c.name, c.id]}
-        options = options_for_select(custom_fields, Scrum::Setting.story_points_custom_field_id) -%>
+        options = options_for_select(custom_fields) -%>
     <%= select_tag "settings[csv_import_issue_id]", "<option value=\"\">#{l(:option_ignore)}</option>".html_safe + options %>
  
 </p>
