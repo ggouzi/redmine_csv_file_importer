@@ -8,15 +8,14 @@ The database is used for intermediate storage.
 ## Requirements
 
 * Redmine 3.0.0 (Rails 4.x)
-* csv gem
-* tempfile gem (already added your Gemfile with Redmine 3.0.0)
+* csv gem (class already defined since ruby 1.9.3)
+* tempfile gem (class already defined since ruby 1.9.3)
 * iconv gem (deprecated since Ruby 1.9.3)
 	
 ## Installation and Setup
 
 To install:
 * Install gems if not present in your Gemfile by adding these lines at the end of your Gemfile :
-`gem "spreadsheet"`
 `gem "iconv"`
 
 Then run :
