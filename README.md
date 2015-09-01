@@ -29,7 +29,7 @@ Example with Centos 5.11:
 `yum install -y gcc ruby-devel zlib-devel`
 
 * Download the plugin to your vendors/plugins directory
-* Rename the plugin folder to "importer"
+* Rename the plugin folder to "redmine_csv_file_importer"
 * Run 'bundle exec rake db:migrate_plugins RAILS_ENV=production'
 * Restart your redmine as appropriate
 
