@@ -5,7 +5,7 @@ Redmine::Plugin.register :redmine_csv_file_importer do
   author 'Dany Poupard'
   description 'Import csv files to add several issues and time_entries at once. This plugin requires iconv and csv gems.'
   version '2.0.0'
-  url 'https://github.com/ggouzi/csv_file_importer'
+  url 'https://github.com/GFI-Orthez/redmine_csv_file_importer'
   
   requires_redmine :version_or_higher => '3.0.0'
   
