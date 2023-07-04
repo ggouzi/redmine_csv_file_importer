@@ -1,6 +1,8 @@
 Redmine Issue Importer plugin for Rails 4.x
 ================
 
+NOT MAINTAINED
+
 This Redmine plugin allows importing issues and time_entries in bulk from csv files. Fields will default to name-based mapping but can be overridden at the confirmation screen.
 Existing issues can be updated, and issue relationships and custom fields are supported.
 The database is used for intermediate storage.
